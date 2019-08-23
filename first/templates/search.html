@@ -1,0 +1,65 @@
+ {% extends 'home.html' %}
+
+
+{% block content %}
+
+
+<body>
+  <!--Search Column -->
+<div class="column side">
+
+    <form action="" method="GET">
+            {{ filter.form.as_p }}
+           <input type="submit" />
+    </form>
+</div>
+
+<!--deals with browse items table -->
+
+<div class="column middle">
+
+<table id="BrowseTable" class="order-column stripe">
+  <thead>
+    <tr>
+      <th scope="col">Middle English Word</th>
+      <th scope="col">Modern English Word</th>
+      <th scope="col">Collection</th>
+      <th scope="col">Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for places in filter.qs%}
+    <tr>
+
+      <td ><h3>
+        <a href="{{ places.get_absolute_url }}">{{ places.Middle }}</a>
+           </h3>
+      </td>
+
+      <td ><h3>
+         <a href="{{ places.get_absolute_url }}">{{ places.Modern_English }}</a>
+          </h3>
+      </td>
+
+      <td><div>
+        <a href="#">{{ places.Collection}}<a>,
+          <div class="tooltip">[{{places.Line_Number}}]
+            <span class="tooltiptext">{{places.Quote}}</span>
+          </div>
+      </td>
+
+      <td><a href="#">{{ places.Tags1}}</a>,
+      <a href="#">{{ places.Tags2}}</a>,
+      <a href="#">{{ places.Tags3}}</a>,
+      <a href="#">{{ places.Tags4}}</a>
+    </td>
+
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+</div>
+</body>
+
+  {% endblock %}

@@ -1,0 +1,88 @@
+/* base CSS */
+* {
+-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+box-sizing: border-box;         /* Opera/IE 8+ */
+}
+html, body {
+padding: 0;
+margin: 0;
+}
+body {
+color: #325050;
+background: #fff;
+font-size: 70%;
+}
+
+header {
+height: 230px;
+padding: 20px 0 70px 0;
+background: #2d6360 50% 0 url(huntington.jpg) no-repeat; /* old IE fallback */
+background-attachment: fixed, fixed, fixed, scroll;
+background-image: url(contours.png), url(noise.png), url(gridlines.png), url(huntington.jpg);
+background-position: 0 0, 0 0, -5px -25px, 0 50%;
+background-repeat: repeat, repeat, repeat, no-repeat;
+background-size: auto, auto, auto, cover;
+text-align: center;
+}
+h1, h2 {
+padding: 0 10%;
+margin: 0;
+color: #fff;
+font-weight: normal;
+}
+h1 {
+padding-top: 0;
+padding-bottom: 5px;
+border-bottom: none;
+font-family: 'Julius Sans One', sans-serif;
+font-size: 3.2em;
+text-transform: uppercase;
+}
+h1::before {
+display: inline-block;
+position: relative;
+top: 20px;
+content: "";
+width: 80px;
+height: 80px;
+margin: -20px 20px 0 0;
+background: url(enso.svg);
+background-repeat: no-repeat;
+background-size: 100%;
+opacity: 0.6;
+}
+h2 {
+display: block;
+padding-top: 5px;
+padding-bottom: 30px;
+border-top: none;
+color: rgba(255,255,255,0.6);
+font-size: 1.6em;
+font-style: italic;
+}
+h2::before {
+content: " ";
+padding: 50px;
+}
+h3 {
+margin: 2em 0 0 0;
+color: #2e484c;
+font-size: 1.8em;
+font-weight: normal;
+text-transform: uppercase;
+}
+p {
+margin: 0.75em 0;
+line-height: 2;
+}
+.page-wrapper {
+position: relative;
+}
+.summary, .preamble {
+width: 80%;
+margin: 0 auto;
+}
+.summary {
+padding-top: 2em;
+}

@@ -1,0 +1,290 @@
+/* base CSS, based on techniques learnt in 'Verde Moderna', by Dave Shea, http://www.mezzoblue.com/*/
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
+/*Basic css*/
+* {
+-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+box-sizing: border-box;         /* Opera/IE 8+ */
+}
+html, body {
+padding: 0;
+margin: 0;
+}
+body {
+color: #325050;
+background: #fff;
+font-size: 70%;
+}
+
+header {
+height: 230px;
+padding: 20px 0 70px 0;
+background: #2d6360 50% 0 url( huntington.jpg) no-repeat; /* old IE fallback */
+background-attachment: fixed, fixed, fixed, scroll;
+background-image: url(../img/europeMap.png);
+background-position: 0 0, 0 0, -5px -25px, 0 50%;
+background-repeat: no-repeat;
+background-size: cover;
+text-align: center;
+}
+
+
+#title, #subtitle {
+padding: 0 10%;
+margin: 0;
+color: #fff;
+font-weight: normal;
+}
+
+
+#title {
+opacity: 0.75;
+font-weight: bold;
+padding-top: 0;
+padding-bottom: 5px;
+border-bottom: none;
+font-family: 'Julius Sans One', sans-serif;
+font-size: 5.2em;
+text-transform: uppercase;
+
+}
+#title::before {
+display: inline-block;
+position: relative;
+top: 20px;
+content: "";
+width: 80px;
+height: 80px;
+margin: -20px 20px 0 0;
+background: url(enso.svg);
+background-repeat: no-repeat;
+background-size: 100%;
+
+
+}
+#subtitle {
+
+display: block;
+padding-top: 5px;
+padding-bottom: 30px;
+border-top: none;
+text-align: center;
+font-size: 2.8em;
+font-style: italic;
+font-weight:bolder;
+color: #FFFFFF;
+text-shadow: 1px 3px 0 #000000, 1px 13px 5px #1F1F1F;
+
+}
+
+}
+#subtitle::before {
+content: " ";
+padding: 50px;
+}
+
+
+h3 {
+font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+font-size: 25px;
+font-style: bold;
+font-variant: small-caps;
+font-weight: 700px;
+line-height: 27.5px;
+margin: 10px;
+}
+
+p {
+  margin: 25px;
+  font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+	font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+
+
+/*Navbar CSS*/
+.navigation {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+
+}
+
+.Search {
+  display: block;
+  padding: 7px 10px;
+  float: right;
+}
+
+.navbar a {
+ float: left;
+ font-size: 16px;
+ color: white;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+}
+
+.Navdropdown {
+ float: left;
+ overflow: hidden;
+}
+
+.Navdropdown .dropbtn {
+ font-size: 16px;
+ border: none;
+ outline: none;
+ color: white;
+ padding: 14px 16px;
+ background-color: inherit;
+ font-family: inherit;
+ margin: 0;
+}
+
+.navbar a:hover, .Navdropdown:hover .dropbtn {
+ background-color: red;
+}
+
+
+/*Browse Table Bar*/
+table#BrowseTable {
+  border: 1px solid #D7D7D7;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+table#BrowseTable a:link  {color: black;text-decoration: none;}
+table#BrowseTable a:visited {color: black;text-decoration: none;}
+
+table#BrowseTable tbody td {
+  font-size: 15px;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+table#BrowseTable thead {
+  background: #000000;
+  background: -moz-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);
+  background: -webkit-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);
+  background: linear-gradient(to bottom, #404040 0%, #191919 66%, #000000 100%);
+}
+table#BrowseTable thead th {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+
+/*Quotation marks on Item page */
+
+blockquote{
+  font-size: 30px;
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: .5em 10px;
+  padding: 0 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  padding: 10px 20px;
+  line-height: 1.4;
+}
+
+blockquote:before {
+  content: open-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: -10px;
+  position: relative;
+  top: 30px;
+  color: #ccc;
+  font-size: 3em;
+}
+
+p{
+  margin: 0;
+}
+
+.footer{
+  margin:0;
+  text-align: right;
+  font-size: 1em;
+  font-style: italic;
+}
+
+
+/*Text on hover */
+.tooltip {
+position: static;
+display: inline-block;
+border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+visibility: hidden;
+width: 120px;
+background-color: black;
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 5px 0;
+
+/* Position the tooltip */
+position: absolute;
+z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+
+/* Create columns that float next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* side column */
+.column.side {
+  width: 25%;
+}
+
+/* Main column */
+.column.middle {
+  width: 70%;
+}
+
+
+/* webpage footer */
+footer {
+    clear: both;
+    margin-top: 150px;
+    z-index: 1;
+    width: 100%;
+}
+
+
+/* page display */
+.PageDisplay{
+  margin-left: 20px;
+  margin-top: 10px;
+
+}
+
+.HeaderDisplay {
+  font-size: 45px;
+}
+
+.normal-text{
+  font-size: 19px;
+  font-family: 'Palatino Linotype';
+}
+
+.spacing {
+    letter-spacing: 2px;
+}

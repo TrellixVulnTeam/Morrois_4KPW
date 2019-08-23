@@ -1,0 +1,37 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<body>
+<!--e -->
+<div class="column middle">
+<h1 id="ItemHeader">{{ instance.Middle}} ({{instance.Modern_English}})</h1>
+<p id="Coord"> Coordinates ( LAT, LONG ) </p>
+
+<blockquote><p class="quotation"> {{ instance.Quote}}</p>
+<footer class="footer">{{ instance.Line_Number}}, {{ instance.Collection}}</footer>
+</blockquote>
+
+
+</div>
+
+
+
+
+
+<div class="column side">
+TGN ID<br>
+  <a href="{{instance.TGNURL}}">{{ instance.TGNID}}<a><br>
+
+TAGS <br>
+<a href="#">{{instance.Tags1}}</a><br>
+
+<a href="#">{{instance.Tags2}}</a><br>
+
+<a href="#">{{instance.Tags3}}</a><br>
+
+<a href="#">{{instance.Tags4}}</a><br>
+
+
+</div>
+</body>
+{% endblock %}

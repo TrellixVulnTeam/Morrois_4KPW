@@ -1,0 +1,69 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.css">
+<script>
+function exec() {
+  var endpoint = d3.select("#endpoint").property("value")
+  var sparql = d3.select("#sparql").property("value")
+  d3sparql.query(endpoint, sparql, render)
+}
+function render(json) {
+  var config = {
+    "label": "MEWORD",
+    "size": "total",
+    "width":  600,  // canvas width
+    "height": 600,  // canvas height
+    "margin":  10,  // canvas margin
+    "hole":   200,  // doughnut hole: 0 for pie, r > 0 for doughnut
+    "selector": "#result"
+  }
+  d3sparql.piechart(json, config)
+}
+
+function toggle() {
+  d3sparql.toggle()
+}
+</script>
+<style>
+.label {
+  font: 10px sans-serif;
+}
+</style>
+</head>
+<body>
+<div id="query" style="margin: 10px">
+  <h1>Piechart SPARQL Query</h1>
+  <form class="form-inline">
+    <label>SPARQL endpoint:</label>
+    <div class="input-append">
+      <input id="endpoint" class="span5" value="http://localhost:3030/Collections/sparql" type="text">
+      <button class="btn" type="button" onclick="exec()">Query</button>
+      <button class="btn" type="button" onclick="toggle()"><i id="button" class="icon-chevron-up"></i></button>
+    </div>
+  </form>
+  <textarea id="sparql" class="span9" rows=15>
+    prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    prefix owl: <http://www.w3.org/2002/07/owl#>
+    prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+    prefix skos: <http://www.w3.org/2004/02/skos/core#>
+    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    prefix morrois: <morroisVocabURI>
+    prefix foaf: <http://xmlns.com/foaf/0.1/>
+
+
+    SELECT DISTINCT ?MEWORD (COUNT(?MEWORD) as ?total)
+    WHERE {
+        ?Items skos:prefLabel ?MEWORD .
+        FILTER (lang(?MEWORD) = 'en')
+    } GROUP BY ?MEWORD
+
+  </textarea>
+</div>
+<div id="result"></div>
+</body>
+
+{% endblock %}
