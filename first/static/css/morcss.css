@@ -95,7 +95,7 @@ margin: 10px;
 }
 
 p {
-  margin: 25px;
+  margin: 10px;
   font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 	font-size: 20px;
   font-style: normal;
@@ -206,9 +206,6 @@ blockquote:before {
   font-size: 3em;
 }
 
-p{
-  margin: 0;
-}
 
 .footer{
   margin:0;
