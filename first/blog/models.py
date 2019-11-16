@@ -1,9 +1,9 @@
 from django.db import models
 COLL_CHOICES = (
-    (0, 'Art 8: Alliterative Morte Arthur'),
-    (1, 'Art 10: Octavian'),
-    (2, 'Art 11: Isumbras'),
-    (3, 'Art 15: Sir Degreuant'),
+    ('Alliterative Morte Arthur', 'Art 8: Alliterative Morte Arthur'),
+    ('Octavian', 'Art 10: Octavian'),
+    ('Isumbras', 'Art 11: Isumbras'),
+    ('Sir Degreuant', 'Art 15: Sir Degreuant'),
 )
 
 # Create your models here.
@@ -23,7 +23,7 @@ class Product(models.Model):
     TGNID = models.TextField(default="")
     TGNURL = models.TextField(default="")
 
-    Collection = models.IntegerField(choices=COLL_CHOICES, default=0)
+    Collection = models.CharField(max_length = 50, choices=COLL_CHOICES, default='Alliterative Morte Arthur')
 
 
     def get_absolute_url(self):

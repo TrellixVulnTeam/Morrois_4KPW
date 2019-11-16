@@ -6,11 +6,11 @@
 
 <body>
   <!--Search Column -->
-<div class="column side">
 
-    <form action="" method="GET">
+<div class="column side">
+    <form id="filter" action="" method="GET">
             {{ filter.form.as_p }}
-           <input type="submit" />
+           <input type="submit" value="Search">
     </form>
 </div>
 
@@ -18,7 +18,7 @@
 
 <div class="column middle">
 
-<table id="BrowseTable" class="order-column stripe">
+<table id="BrowseTable" class="animated fadeIn delay-4s order-column stripe">
   <thead>
     <tr>
       <th scope="col">Middle English Word</th>
@@ -41,7 +41,7 @@
           </h3>
       </td>
 
-      <td><div>
+      <td>
         <a href="#">{{ places.Collection}}<a>,
           <div class="tooltip">[{{places.Line_Number}}]
             <span class="tooltiptext">{{places.Quote}}</span>
@@ -60,6 +60,8 @@
 </table>
 
 </div>
+</div>
+
 </body>
 
   {% endblock %}

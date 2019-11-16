@@ -9,17 +9,18 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 html, body {
 padding: 0;
 margin: 0;
+scroll-behavior: smooth;
+height: 100%
+
 }
 body {
 color: #325050;
-background: #fff;
 font-size: 70%;
 }
 
 header {
-height: 230px;
+height: 160px;
 padding: 20px 0 70px 0;
-background: #2d6360 50% 0 url( huntington.jpg) no-repeat; /* old IE fallback */
 background-attachment: fixed, fixed, fixed, scroll;
 background-image: url(../img/europeMap.png);
 background-position: 0 0, 0 0, -5px -25px, 0 50%;
@@ -38,7 +39,6 @@ font-weight: normal;
 
 
 #title {
-opacity: 0.75;
 font-weight: bold;
 padding-top: 0;
 padding-bottom: 5px;
@@ -48,22 +48,9 @@ font-size: 5.2em;
 text-transform: uppercase;
 
 }
-#title::before {
-display: inline-block;
-position: relative;
-top: 20px;
-content: "";
-width: 80px;
-height: 80px;
-margin: -20px 20px 0 0;
-background: url(enso.svg);
-background-repeat: no-repeat;
-background-size: 100%;
 
-
-}
 #subtitle {
-
+font-family: 'Julius Sans One', sans-serif;
 display: block;
 padding-top: 5px;
 padding-bottom: 30px;
@@ -76,13 +63,6 @@ color: #FFFFFF;
 text-shadow: 1px 3px 0 #000000, 1px 13px 5px #1F1F1F;
 
 }
-
-}
-#subtitle::before {
-content: " ";
-padding: 50px;
-}
-
 
 h3 {
 font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
@@ -112,7 +92,7 @@ p {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #423A2A;
 
 }
 
@@ -148,7 +128,7 @@ p {
 }
 
 .navbar a:hover, .Navdropdown:hover .dropbtn {
- background-color: red;
+ background-color: #8F6F31;
 }
 
 
@@ -182,9 +162,9 @@ table#BrowseTable thead th {
 
 
 /*Quotation marks on Item page */
-
 blockquote{
   font-size: 30px;
+  color: black;
   background: #f9f9f9;
   border-left: 10px solid #ccc;
   margin: .5em 10px;
@@ -192,6 +172,7 @@ blockquote{
   quotes: "\201C""\201D""\2018""\2019";
   padding: 10px 20px;
   line-height: 1.4;
+  opacity: 0.6;
 }
 
 blockquote:before {
@@ -254,6 +235,7 @@ visibility: visible;
 /* Main column */
 .column.middle {
   width: 70%;
+  margin: 30px;
 }
 
 
@@ -267,10 +249,23 @@ footer {
 
 
 /* page display */
+#homesidecolumn{ /* page display for home page side column */
+border-radius: 15px 50px;
+background-color: #6f6247;
+color: white;
+font-size: 17px;
+width: 33%;
+}
+
+
+#homemaincolumn{
+  padding: 40px;
+  width: 50%;
+}
+
 .PageDisplay{
   margin-left: 20px;
   margin-top: 10px;
-
 }
 
 .HeaderDisplay {
@@ -284,4 +279,129 @@ footer {
 
 .spacing {
     letter-spacing: 2px;
+}
+
+#filter ul {
+  list-style-type: none;
+}
+
+/*sticky navbar edited from CodePen source https://codepen.io/ettrics/pen/WRbGRN*/
+
+a.et-hero-tab {
+	text-decoration: none;
+}
+
+.et-hero-tabs,
+.et-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    position: relative;
+    background: #eee;
+		text-align: center;
+		padding: 0 2em;
+}
+
+#LTbooklet2{
+  height: 240vh;
+}
+
+#LTbooklet3{
+  height: 480vh;
+}
+
+#LTbooklet4{
+  height: 60vh;
+}
+.et-slide, .et-hero-tabs h1 {
+    font-size: 45px;
+    margin: 0;
+    letter-spacing: 7px;
+}
+.et-slide, .et-hero-tabs h3 {
+    font-size: 19px;
+    letter-spacing: 0.3rem;
+    opacity: 0.6;
+}
+
+.et-hero-tabs-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    z-index: 10;
+}
+
+.et-hero-tabs-container--top {
+  position: fixed;
+  top: 0;
+}
+
+.et-hero-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #000;
+    letter-spacing: 0.1rem;
+		transition: all 0.5s ease;
+		font-size: 0.8rem;
+
+}
+
+  a.et-hero-tab:hover {
+   color:white;
+   background: #423A2A;
+   transition: all 0.5s ease;
+ }
+
+.et-hero-tab-slider {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    background: #8F6F31;
+    transition: left 0.3s ease;
+
+}
+
+/*blurry background effect*/
+.bg-image {
+  /* The image used */
+  background-image: url(../img/europeMap.png);
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 130%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 91%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 100%;
+  padding: 10px;
+
 }

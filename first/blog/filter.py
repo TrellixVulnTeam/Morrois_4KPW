@@ -1,15 +1,16 @@
 import django_filters
 from .models import Product
+from django import forms
 
 COLL_CHOICES = (
-    (0, 'Art 8: Alliterative Morte Arthur'),
-    (1, 'Art 10: Octavian'),
-    (2, 'Art 11: Isumbras'),
-    (3, 'Art 15: Sir Degreuant'),
+    ('Alliterative Morte Arthur', 'Art 8: Alliterative Morte Arthur'),
+    ('Octavian', 'Art 10: Octavian'),
+    ('Isumbras', 'Art 11: Isumbras'),
+    ('Sir Degreuant', 'Art 15: Sir Degreuant'),
 )
 
 class ProductFilter(django_filters.FilterSet):
-    Collection = django_filters.MultipleChoiceFilter(choices=COLL_CHOICES)
+    Collection = django_filters.MultipleChoiceFilter(choices=COLL_CHOICES, widget=forms.CheckboxSelectMultiple)
 
 
     class Meta:
