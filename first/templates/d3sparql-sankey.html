@@ -1,0 +1,94 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.css">
+<script>
+function exec() {
+  var endpoint = d3.select("#endpoint").property("value")
+  var sparql = d3.select("#sparql").property("value")
+  d3sparql.query(endpoint, sparql, render)
+}
+function render(json) {
+  var config = {
+    // for d3sparql.graph()
+    "key1": "parent",
+    "key2": "child",
+    "label1": "parent_name",
+    "label2": "child_name",
+    // for d3sparql.sankey()
+    "width":   1200,
+    "height": 900,
+    "margin":   10,
+    "selector": "#result"
+  }
+  d3sparql.sankey(json, config)
+}
+
+function toggle() {
+  d3sparql.toggle()
+}
+</script>
+
+<style>
+   .node rect {
+     cursor: move;
+     fill-opacity: .9;
+     shape-rendering: crispEdges;
+   }
+   .node text {
+     pointer-events: none;
+     text-shadow: 0 1px 0 #fff;
+   }
+   .link {
+     fill: none;
+     stroke: #000;
+     stroke-opacity: .2;
+   }
+   .link:hover {
+     stroke-opacity: .5;
+   }
+</style>
+</head>
+<body>
+   <div id="query" style="margin: 10px">
+     <h1>Sankey SPARQL Query</h1>
+     <form class="form-inline">
+       <label>SPARQL endpoint:</label>
+       <div class="input-append">
+         <input id="endpoint" class="span5" value="http://localhost:3030/Collections/sparql" type="text">
+         <button class="btn" type="button" onclick="exec()">Query</button>
+         <button class="btn" type="button" onclick="toggle()"><i id="button" class="icon-chevron-up"></i></button>
+       </div>
+     </form>
+     <textarea id="sparql" class="span9" rows="15">
+prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix morrois: <morroisVocabURI#>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT ?parent ?parent_name ?child ?child_name
+WHERE {
+ VALUES ?root { <http://localhost:3333/Asia+%28continent%29> }
+ ?root   rdf:type owl:Class ;
+         rdfs:label ?root_name .
+ ?parent rdf:type owl:Class ;
+         rdfs:label ?parent_name.
+  ?child rdf:type owl:Class ;
+         rdfs:label ?child_name;
+ 		  rdfs:subClassOf ?parent.
+ ?child rdfs:subClassOf* ?root.
+ ?child rdfs:subClassOf ?parent.
+ }
+
+     </textarea>
+  </div>
+  <div id="result"></div>
+</body>
+
+{% endblock %}

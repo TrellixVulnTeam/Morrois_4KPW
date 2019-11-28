@@ -71,3 +71,9 @@ def barchart_view(request,*args, **kwargs):
 
 def piechart_view(request,*args, **kwargs):
     return render(request, "d3sparql-piechart.html", {})
+
+def sankey_view(request,*args, **kwargs):
+    return render(request, "d3sparql-sankey.html", {})
+
+def roundtree_view(request,*args, **kwargs):
+    return render(request, "d3sparql-roundtree.html", {})

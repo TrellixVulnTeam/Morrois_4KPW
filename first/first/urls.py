@@ -43,4 +43,6 @@ path('news/', views.news_view, name='news'),
 
 path('d3sparql-barchart/', views.barchart_view, name='d3sparql-barchart'),
 path('d3sparql-piechart/', views.piechart_view, name='d3sparql-piechart'),
+path('d3sparql-sankey/', views.sankey_view, name='d3sparql-sankey'),
+path('d3sparql-roundtree/', views.roundtree_view, name='d3sparql-roundtree'),
 ]
