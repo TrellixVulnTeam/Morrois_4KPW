@@ -8,11 +8,11 @@ COLL_CHOICES = (
 
 # Create your models here.
 class Product(models.Model):
-    id = models.AutoField(primary_key=True)
+    id = models.CharField(default="", primary_key= True, max_length = 50)
     Middle = models.TextField()
     Modern_English = models.TextField()
     Quote = models.TextField()
-    Line_Number = models.TextField(default="This is cool!")
+    Line_Number = models.TextField(default="Line Number")
     Contributor = models.TextField(default="Contributor")
     Notes = models.TextField(default="Notes")
     Language = models.TextField(default="")
@@ -21,7 +21,15 @@ class Product(models.Model):
     Tags3 = models.TextField(default="")
     Tags4 = models.TextField(default="")
     TGNID = models.TextField(default="")
+    LatTGN = models.TextField(default="", null=True)
+    LongTGN = models.TextField(default="",null=True)
     TGNURL = models.TextField(default="")
+    TGNT1 = models.TextField(default="")
+    TGNT2 = models.TextField(default="")
+    TGNT3 = models.TextField(default="")
+    TGNT4 = models.TextField(default="")
+    TGNT5 = models.TextField(default="")
+    TGNT6 = models.TextField(default="")
 
     Collection = models.CharField(max_length = 50, choices=COLL_CHOICES, default='Alliterative Morte Arthur')
 

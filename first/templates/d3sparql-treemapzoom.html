@@ -11,28 +11,37 @@
   }
   function render(json) {
     var config = {
-      // for d3sparql.tree()
-      "root": "root_name",
-      "parent": "parent_name",
-      "child": "child_name",
-      // for d3sparql.roundtree()
-      "diameter": 2000,
-      "angle": 360,
-      "depth": 800,
-      "radius": 5,
+      // for d3sparql.treemap()
+      "width": 1400,
+      "height": 600,
       "selector": "#result"
     }
-    d3sparql.roundtree(json, config)
+    d3sparql.treemapzoom(json, config)
   }
 
   function toggle() {
     d3sparql.toggle()
   }
   </script>
-</head>
+  <style>
+      text {
+        pointer-events: none;
+      }
+      .children rect.parent,
+      .grandparent rect {
+        cursor: pointer;
+      }
+      .grandparent:hover rect {
+        opacity: 0.8;
+      }
+      .children:hover rect.child {
+        opacity: 0.2;
+      }
+      </style>
+
 <body>
 <div id="query" style="margin: 10px">
-  <h1>Round Tree SPARQL Query</h1>
+  <h1>Tree Map Zoom SPARQL Query</h1>
   <form class="form-inline">
     <label>SPARQL endpoint:</label>
     <div class="input-append">
@@ -41,8 +50,7 @@
       <button class="btn" type="button" onclick="toggle()"><i id="button" class="icon-chevron-up"></i></button>
     </div>
   </form>
-  <textarea id="sparql" class="span9" rows=15>
-prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+  <textarea id="sparql" class="span9" rows=15>prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -51,7 +59,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix morrois: <morroisVocabURI#>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
 
-SELECT DISTINCT ?root_name ?parent_name ?child_name
+SELECT DISTINCT ?root_name ?parent_name ?child_name (COUNT(?item) as ?total)
 WHERE {
   VALUES ?root { <http://localhost:3333/Europe+%28continent%29> }
   ?root   rdf:type owl:Class ;
@@ -63,7 +71,11 @@ WHERE {
   		  rdfs:subClassOf ?parent.
   ?child rdfs:subClassOf* ?root.
   ?child rdfs:subClassOf ?parent.
+
+  ?item rdfs:subClassOf ?parent.
 }
+GROUP BY ?root_name ?parent_name ?child_name ORDER BY ?child_name
+
   </textarea>
 </div>
 <div id="result"></div>

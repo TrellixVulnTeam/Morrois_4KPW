@@ -6,39 +6,49 @@
 <div class="bg-image"></div>
 
 <div class="bg-text column middle">
-<div>
-<h1 class="HeaderDisplay spacing">{{ instance.Middle}} ({{instance.Modern_English}})</h1>
-<p id="Coord"> Coordinates ( LAT, LONG )</p>
 
-<blockquote><p class="quotation"> {{ instance.Quote}}</p>
-<footer class="footer">{{ instance.Line_Number}}, {{ instance.Collection}}</footer>
-</blockquote>
-</div>
+      <div class="normal-text no_dec spacing" style="float:right;">
+        <br>TGN ID<br>
+        <a href="{{instance.TGNURL}}">{{ instance.TGNID}}<a><br><br>
+      </div>
 
-<div class="column side normal-text">
-<br>TGN ID<br>
+      <div>
+          <h1 class="HeaderDisplay spacing">{{ instance.Middle}} ({{instance.Modern_English}})</h1>
+          <p id="Coord"> Coordinates ( {{instance.LatTGN}}, {{instance.LongTGN}} )</p>
 
-<a href="{{instance.TGNURL}}">{{ instance.TGNID}}<a><br><br>
+          <blockquote><p class="quotation"> {{ instance.Quote}}</p>
+          <footer class="footer">{{ instance.Line_Number}}, {{ instance.Collection}}</footer>
+          </blockquote>
+      </div>
 
-MORROIS TAGS <br>
-<a href="#">{{instance.Tags1}}</a>,
+      <div class="column middle spacing normal-text no_dec">
+          <div style="float:right;">
+              MORROIS TAGS <br>
+              <p>
+              <a href="http://127.0.0.1:8000/search/?Tags1={{instance.Tags1}}">{{instance.Tags1}}</a><br>
 
-<a href="#">{{instance.Tags2}}</a>,
+              <a href="http://127.0.0.1:8000/search/?Tags2={{instance.Tags2}}">{{instance.Tags2}}</a><br>
 
-<a href="#">{{instance.Tags3}}</a>,
+              <a href="http://127.0.0.1:8000/search/?Tags3={{instance.Tags3}}">{{instance.Tags3}}</a><br>
 
-<a href="#">{{instance.Tags4}}</a><br>
-<br>
-TGN TAGS <br>
-<a href="#">{{instance.Tags1}}</a>,
+              <a href="http://127.0.0.1:8000/search/?Tags4={{instance.Tags4}}">{{instance.Tags4}}</a><br>
+            </p>
+          </div>
+          <div style="float:left;">TGN TAGS <br><p>
+              <a href="#">{{instance.TGNT1}}</a><br>
 
-<a href="#">{{instance.Tags2}}</a>,
+              <a href="#">{{instance.TGNT2}}</a><br>
 
-<a href="#">{{instance.Tags3}}</a>,
+              <a href="#">{{instance.TGNT3}}</a><br>
 
-<a href="#">{{instance.Tags4}}</a>
+              <a href="#">{{instance.TGNT4}}</a><br>
 
-</div>
+              <a href="#">{{instance.TGNT5}}</a><br>
+
+              <a href="#">{{instance.TGNT6}}</a><br></p>
+          </div>
+
+  </div>
 </div>
 </body>
 {% endblock %}

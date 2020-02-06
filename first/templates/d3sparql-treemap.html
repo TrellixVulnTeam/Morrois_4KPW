@@ -15,24 +15,22 @@
       "root": "root_name",
       "parent": "parent_name",
       "child": "child_name",
-      // for d3sparql.roundtree()
-      "diameter": 2000,
-      "angle": 360,
-      "depth": 800,
-      "radius": 5,
+      // for d3sparql.treemap()
+      "width": 1300,
+      "height": 500,
       "selector": "#result"
     }
-    d3sparql.roundtree(json, config)
+    d3sparql.treemap(json, config)
   }
 
   function toggle() {
     d3sparql.toggle()
   }
   </script>
-</head>
+
 <body>
 <div id="query" style="margin: 10px">
-  <h1>Round Tree SPARQL Query</h1>
+  <h1>Tree Map SPARQL Query</h1>
   <form class="form-inline">
     <label>SPARQL endpoint:</label>
     <div class="input-append">

@@ -17,7 +17,7 @@ def browse_view(request,*args,**kwargs):
 
     return render(request, 'search.html', {'filter': f})
 
-def item_view(request, id=None):
+def item_view(request, id):
     instance = get_object_or_404(Product, id=id)
     context={ "instance": instance}
     return render(request, "ItemDetail.html", context)
@@ -77,3 +77,15 @@ def sankey_view(request,*args, **kwargs):
 
 def roundtree_view(request,*args, **kwargs):
     return render(request, "d3sparql-roundtree.html", {})
+
+def treemap_view(request,*args, **kwargs):
+    return render(request, "d3sparql-treemap.html", {})
+
+def dendrogram_view(request,*args, **kwargs):
+    return render(request, "d3sparql-dendrogram.html", {})
+
+def sunburst_view(request,*args, **kwargs):
+    return render(request, "d3sparql-sunburst.html", {})
+
+def treemapzoom_view(request,*args, **kwargs):
+    return render(request, "d3sparql-treemapzoom.html", {})

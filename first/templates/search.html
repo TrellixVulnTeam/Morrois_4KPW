@@ -3,16 +3,116 @@
 
 {% block content %}
 
+  <!--Search Tag Filter Options, adapted from wgabel's snippet.html https://gist.github.com/wgabel/50544d2e4ba3b4ce006e7d332afb0137 -->
+<div id="" class="column side normal-text spacing">
+  <form><ul id="myUL" action="#" method="GET">
+    <h2>COLLECTION:</h2>
+    <li><input type="checkbox" name="Collection" value="Alliterative Morte Arthur">Art 8: Alliterative Morte Arthur</li>
+    <li><input type="checkbox" name="Collection" value="Octavian">Art 10: Octavian</li>
+    <li><input type="checkbox" name="Collection" value="Isumbras">Art 11: Isumbras</li>
+    <li><input type="checkbox" name="Collection" value="Sir Degreuant">Art 15: Sir Degreuant</li>
 
-<body>
-  <!--Search Column -->
+    <h2>TAGS:</h2>
+    <li><input type="checkbox" name="Tags1" value="place"><span class="caret">Place</span>
+      <ul class="nested">
+        <li><input type="checkbox" name="Tags2" value="geogName"><span class="caret">Geographic Name</span>
+          <ul class="nested">
+            <li><input type="checkbox" name="Tags3" value="geogFeat"><span class="caret">Geographic Feature</span>
+              <ul class="nested">
+                <li><input type="checkbox" name="Tags4" value="continent">Continent</li>
+                <li><input type="checkbox" name="Tags4" value="hill">Hill</li>
+                <li><input type="checkbox" name="Tags4" value="islands">Islands</li>
+                <li><input type="checkbox" name="Tags4" value="lake">Lake</li>
+                <li><input type="checkbox" name="Tags4" value="mountains">Mountains</li>
+                <li><input type="checkbox" name="Tags4" value="peninsula">Peninsula</li>
+                <li><input type="checkbox" name="Tags4" value="planet">Planet</li>
+                <li><input type="checkbox" name="Tags4" value="region">Region</li>
+                <li><input type="checkbox" name="Tags4" value="river">River</li>
+                <li><input type="checkbox" name="Tags4" value="sea">Sea</li>
+                <li><input type="checkbox" name="Tags4" value="valley">Valley</li>
+              </ul></li>
+          </ul></li>
+        <li><input type="checkbox" name="Tags2" value="imagName"><span class="caret">Imaginary Name</span>
+          <ul class="nested">
+            <li><input type="checkbox" name="Tags3" value="country">Country</li>
+            <li><input type="checkbox" name="Tags3" value="faith">Faith</li>
+          </ul></li>
+        <li><input type="checkbox" name="Tags2" value="placeName"><span class="caret">Place Name</span>
+          <ul class="nested">
+            <li><input type="checkbox" name="Tags3" value="country">Country</li>
+            <li><input type="checkbox" name="Tags3" value="empire">Empire</li>
+            <li><input type="checkbox" name="Tags3" value="faith">Faith</li>
+            <li><input type="checkbox" name="Tags3" value="region">Region</li>
+            <li><input type="checkbox" name="Tags3" value="settlement">Settlement</li>
+            <li><input type="checkbox" name="Tags3" value="street">Street</li>
 
-<div class="column side">
-    <form id="filter" action="" method="GET">
-            {{ filter.form.as_p }}
-           <input type="submit" value="Search">
-    </form>
-</div>
+          </ul></li>
+      </ul>
+    </li>
+    <li><input type="checkbox" name="Tags1" value="person"><span class="caret">Person</span>
+      <ul class="nested">
+        <li><input type="checkbox" name="Tags2" value="nationality">Nationality</li>
+        <li><input type="checkbox" name="Tags2" value="persName"><span class="caret">Person Name</span>
+          <ul class="nested">
+            <li><input type="checkbox" name="Tags3" value="addName">Additional Name</li></ul></li>
+        <li><input type="checkbox" name="Tags2" value="personGrp"><span class="caret">Person Group</span>
+          <ul class="nested">
+            <li><input type="checkbox" name="Tags3" value="faith">Faith</li>
+            <li><input type="checkbox" name="Tags3" value="nationality">Nationality</li>
+            <li><input type="checkbox" name="Tags3" value="roleName"><span class="caret">Role Name</span>
+              <ul class="nested">
+                <li><input type="checkbox" name="Tags4" value="political">Political</li></ul></li>
+              </ul></li>
+        <li><input type="checkbox" name="Tags2" value="roleName"><span class="caret">Role Name</span>
+          <ul class="nested">
+            <li><input type="checkbox" name="Tags3" value="ecclesiastical">Ecclesiastical</li>
+            <li><input type="checkbox" name="Tags3" value="imagName"><span class="caret">Imaginary Name</span>
+              <ul class="nested">
+                <li><input type="checkbox" name="Tags4" value="faith">Faith</li></ul></li>
+            <li><input type="checkbox" name="Tags3" value="political">Political</li>
+          </ul></li>
+      </ul>
+    </li>
+    <li><input type="checkbox" name="Tags1" value="thing"><span class="caret">Thing</span>
+      <ul class="nested">
+        <li><input type="checkbox" name="Tags2" value="animal"><span class="caret">Animal</span>
+          <ul class="nested">
+            <li><input type="checkbox" name="Tags3" value="horse">Horse</li>
+          </ul></li>
+        <li><input type="checkbox" name="Tags2" value="good"><span class="caret">Good</span>
+          <ul class="nested">
+            <li><input type="checkbox" name="Tags3" value="armor">Armor</li>
+            <li><input type="checkbox" name="Tags3" value="currency">Currency</li>
+            <li><input type="checkbox" name="Tags3" value="food"><span class="caret">Food</span>
+              <ul class="nested">
+                <li><input type="checkbox" name="Tags4" value="beverage">Beverage</li>
+              </ul></li>
+            <li><input type="checkbox" name="Tags3" value="textile">Textile</li>
+            <li><input type="checkbox" name="Tags3" value="weapon">Weapon</li>
+          </ul></li>
+        <li><input type="checkbox" name="Tags2" value="language"><span class="caret">Language</span>
+          <ul class="nested">
+            <li><input type="checkbox" name="Tags3" value="spoken">Spoken</li>
+            <li><input type="checkbox" name="Tags3" value="written">Written</li>
+          </ul></li>
+        <li><input type="checkbox" name="Tags2" value="transport">Transport</li>
+      </ul>
+    </li>
+  </ul>
+  <input type="submit" value="Search">
+  </form>
+  </div>
+
+  <script>
+  var toggler = document.getElementsByClassName("caret");
+  var i;
+  for (i = 0; i < toggler.length; i++) {
+    toggler[i].addEventListener("click", function() {
+      this.parentElement.querySelector(".nested").classList.toggle("active");
+      this.classList.toggle("caret-down");
+    });
+  }
+  </script>
 
 <!--deals with browse items table -->
 
@@ -48,10 +148,10 @@
           </div>
       </td>
 
-      <td><a href="#">{{ places.Tags1}}</a>,
-      <a href="#">{{ places.Tags2}}</a>,
-      <a href="#">{{ places.Tags3}}</a>,
-      <a href="#">{{ places.Tags4}}</a>
+      <td>{{ places.Tags1}},
+          {{ places.Tags2}},
+          {{ places.Tags3}},
+          {{ places.Tags4}}
     </td>
 
     </tr>
@@ -60,7 +160,7 @@
 </table>
 
 </div>
-</div>
+
 
 </body>
 
