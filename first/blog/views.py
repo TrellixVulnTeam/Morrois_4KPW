@@ -6,7 +6,7 @@ from .filter import ProductFilter
 
 # Create your views here.
 def home_view(request,*args, **kwargs):
-    return render(request, "Morrois/home.html", {})
+    return render(request, "home.html", {})
 
 def lod_view(request,*args, **kwargs):
     return render(request, "Morrois/lod.html", {})

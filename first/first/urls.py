@@ -21,7 +21,7 @@ from blog import views
 
 urlpatterns = [
 
-path('Morrois/home/', views.home_view, name='home'),
+path('Morrois/', views.home_view, name='Morrois'),
 path('Morrois/admin/', admin.site.urls),
 path('Morrois/search/', views.browse_view, name='browse'),
 path('Morrois/lod/', views.lod_view, name='lod'),
