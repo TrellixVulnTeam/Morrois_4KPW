@@ -1,8 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Product
-from .filter import ProductFilter
+from .filter import ProductFilter 
 
 # Create your views here.
 def home_view(request,*args, **kwargs):
