@@ -20,7 +20,6 @@ from django.conf.urls import url
 from blog import views
 
 urlpatterns = [
-
 path('', views.home_view, name='Morrois'),
 path('home/', views.home_view, name='home'),
 path('admin/', admin.site.urls),
