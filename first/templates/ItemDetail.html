@@ -2,36 +2,31 @@
 
 {% block content %}
 <body>
-<!--e -->
-<div class="bg-image"></div>
-
 <div class="bg-text column middle">
-
       <div class="normal-text no_dec spacing" style="float:right;">
         <br>TGN ID<br>
         <a href="{{instance.TGNURL}}">{{ instance.TGNID}}<a><br><br>
       </div>
-
       <div>
           <h1 class="HeaderDisplay spacing">{{ instance.Middle}} ({{instance.Modern_English}})</h1>
           <p id="Coord"> Coordinates ( {{instance.LatTGN}}, {{instance.LongTGN}} )</p>
-
-          <blockquote><p class="quotation"> {{ instance.Quote}}</p>
-          <footer class="footer">{{ instance.Line_Number}}, {{ instance.Collection}}</footer>
+          <blockquote>
+            <p class="quotation"> {{ instance.Quote}}</p>
+            <footer class="footer">{{ instance.Line_Number}}, {{ instance.Collection}}</footer>
           </blockquote>
       </div>
 
-      <div class="column middle spacing normal-text no_dec">
+      <div class="float-start spacing normal-text no_dec">
           <div style="float:right;">
               MORROIS TAGS <br>
               <p>
-              <a href="http://127.0.0.1:8000/Morrois/search/?Tags1={{instance.Tags1}}/">{{instance.Tags1}}</a><br>
+              <a href="http://127.0.0.1:8000/Morrois/search/?Collection={{instance.Collection}}&Tags1={{instance.Tags1}}/">{{instance.Tags1}}</a><br>
 
-              <a href="http://127.0.0.1:8000/Morrois/search/?Tags2={{instance.Tags2}}/">{{instance.Tags2}}</a><br>
+              <a href="http://127.0.0.1:8000/Morrois/search/?Collection={{instance.Collection}}&Tags2={{instance.Tags2}}/">{{instance.Tags2}}</a><br>
 
-              <a href="http://127.0.0.1:8000/Morrois/search/?Tags3={{instance.Tags3}}/">{{instance.Tags3}}</a><br>
+              <a href="http://127.0.0.1:8000/Morrois/search/?Collection={{instance.Collection}}&Tags3={{instance.Tags3}}/">{{instance.Tags3}}</a><br>
 
-              <a href="http://127.0.0.1:8000/Morrois/search/?Tags4={{instance.Tags4}}/">{{instance.Tags4}}</a><br>
+              <a href="http://127.0.0.1:8000/Morrois/search/?Collection={{instance.Collection}}&Tags4={{instance.Tags4}}/">{{instance.Tags4}}</a><br>
             </p>
           </div>
           <div style="float:left;">TGN TAGS <br><p>
@@ -45,10 +40,11 @@
 
               <a href="#">{{instance.TGNT5}}</a><br>
 
-              <a href="#">{{instance.TGNT6}}</a><br></p>
+              <a href="#">{{instance.TGNT6}}</a><br></p> 
           </div>
 
   </div>
 </div>
+
 </body>
 {% endblock %}

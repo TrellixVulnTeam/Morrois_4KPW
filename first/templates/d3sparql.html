@@ -1,0 +1,80 @@
+{% extends 'Morrois/home.html' %}
+
+
+{% block content %}
+<div class="animated fadeIn delay-1s container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block custom-bg-dark collapse">
+        <h1 class="display-4"><br>Explore Data</h1><hr>
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="custom-white-font nav-link" aria-current="page" href="#">
+                <span data-feather="bar-chart-2"></span>
+                Bar Chart
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="custom-white-font nav-link" href="#">
+                <span data-feather="pie-chart"></span>
+                Pie Chart
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="custom-white-font nav-link" href="#">
+                <span data-feather="trello"></span>
+                Sankey Graph
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="custom-white-font nav-link" href="#">
+                <span data-feather="sun"></span>
+                Round Tree Graph
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="custom-white-font nav-link" href="#">
+                <span data-feather="layout"></span>
+                Tree Map 
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="custom-white-font nav-link" href="#">
+                <span data-feather="columns"></span>
+                Tree Map Zoom
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="custom-white-font nav-link" href="#">
+                <span data-feather="layers"></span>
+                Dendrogram Map
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="custom-white-font nav-link" href="#">
+                <span data-feather="cpu"></span>
+                Sunburst Map
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  
+      <main class="custom-bg-light col-md-9 ms-sm-auto col-lg-10 px-md-4 custom-dark-font">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="display-6">SPARQL Query</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+          </div>
+        </div>
+  
+        <!--iframe containing d3sparql-->
+        <iframe src="https://www.w3schools.com" name="iframe_a" height="700px" width="100%" title="D3Sparql"></iframe>
+        <p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+  
+        </div>
+      </main>
+    </div>
+{% endblock %}

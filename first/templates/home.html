@@ -1,131 +1,185 @@
 <!DOCTYPE html>
 {% load static %}
 
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="{% static 'css/morcss.css'%}">
-<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css'%}">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> MORROIS (Mapping of Romance Realms and Other Imagined Spaces)</title>
 
-<script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
-<script src = "https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!--CSS and JS files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/carousel.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/morcss.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css'%}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    
+   
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    
+    <script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src = "https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'js/d3sparql.js'%}"></script>
+    <script src="{% static 'js/sticky.js'%}"></script>
+    <script src="{% static 'js/d3.v3.min.js'%}"></script>
+    <script src="{% static 'js/sankey.js'%}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
 
-<script src="{% static 'js/d3sparql.js'%}"></script>
-<script src="{% static 'js/sticky.js'%}"></script>
-<script src="{% static 'js/d3.v3.min.js'%}"></script>
-<script src="{% static 'js/sankey.js'%}"></script>
-<script type = "text/javascript">
-    $(document).ready(function(){
-        $('#BrowseTable').DataTable();
-    });
-</script>
-</head>
+    
+    <script type = "text/javascript">
+        $(document).ready(function(){
+            $('#BrowseTable').DataTable();
+            feather.replace();
+        });
+    </script>
+    
+  </head>
 
-
-<header class="" role="banner">
-<h1 class="animated fadeInDownBig delay-1.5s" id="title">MORROIS</h1>
-<h2 class="animated fadeIn delay-2s" id="subtitle"> Mapping of Romance Realms &amp; Other Imagined Spaces </h2>
-</header>
-
-<div class="navbar">
-
-<ul class="navigation">
-
-    <a href="/Morrois/">Home</a>
-
-    <a href="../Morrois/lincolnthornton/">The Lincoln Thornton Manuscript</a>
-
-    <a href="../Morrois/essays/">Essays and Notes</a>
-
-    <a href="../Morrois/using/">Using This Site</a>
-
-    <a href="../Morrois/about/">About MORROIS</a>
-
-    <a href="../Morrois/news/">News</a>
-
-    <a href="../Morrois/lod/">Linked Open Data</a>
-       <!-- Search form from mdbootstrap -->
-    <div class ="Search">
-    <form class="searchButtonMain">
-    <input type="text" placeholder="Search" aria-label="Search">
-    <button id="Searchinput" type="submit">Search</button>
-    </form>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="shadow navbar navbar-custom navbar-expand-md navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/Morrois/home/">MORROIS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/Morrois/about">Development Team</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/Morrois/using">Using This Site</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/Morrois/essays">Essays and Notes</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/Morrois/news">News</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Morrois/lincolnthornton">Lincoln Thornton Manuscript</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Morrois/lod">Linked Open Data</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+   
+    <!--Bootstrap Carousel -->
+  {% block content %}
+  <div class="custom-bg-light">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <svg class="shadow bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+  
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Welcome to MORROIS (Mapping of Romance Realms and Other Imagined Spaces)</h1>
+              <p>For more information on how to use this site and access the data, read about using the site. </p>
+              <p><a class="btn btn-lg custom-btn-sec shadow" href="/Morrois/using" role="button">More Details</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <svg class="shadow bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+  
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Place Name Collections</h1>
+              <p>MORROIS contains a growing list of manuscripts and their contents. View a list of all place-names found in the Alliterative Morte Arthure.</p>
+              <p><a class="btn btn-lg custom-btn-sec shadow" href="/Morrois/search/?Collection=Alliterative+Morte+Arthur/" role="button">Browse Collection</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <svg class="shadow bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+  
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1>Linked Open Data Development</h1>
+              <p>Read short essays and notes written by members of the development team on the process of data collection to date, as well as further details about our RDF migration.</p>
+              <p><a class="btn btn-lg custom-btn-sec shadow" href="/Morrois/essays" role="button">Learn More</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
     </div>
-  </ul>
-
-</div>
-
-
-{% block content %}
-
-<body>
-
-  <div class="bg-image"></div>
-
-  <div class="bg-text">
-<div id="homemaincolumn" class="animated fadeIn delay-2s column middle PageDisplay">
-
-<h3 style="font-size: 25px;">Welcome to MORROIS (Mapping of Romance Realms and Other Imagined Spaces).</h3>
-
-<p>MORROIS is an index of line-by-line instance of place names in Middle English romances; all explicit references to any distinct place (whether&nbsp;<span>noun, adjective, or other derived form) are catalogued.</span></p>
-<p><span></span></p>
-<p><span>Currently, our data is offered through the <a href="https://omeka.org/" target="_blank" rel="noreferrer noopener">Omeka content management system</a>, while a more dynamic and flexible RDF platform is under construction.&nbsp;</span><span></span></p>
-<p><span>This prototype site features an irregularly updated concordance of all place names found in the romances of Booklets 1 and 2 of the Lincoln Thornton manuscript (Lincoln Cathedral Library, MS 91) by copyist and compiler Robert Thornton (fl. 1418 – 1456), including the unique copies of: </span></p>
-
-<ul class="normal-text spacing">
-  <li><span>The Prose <em>Life of Alexander,</em></span></li>
-  <li><span>the <a href="../Morrois/ltama/"><em>Alliterative Morte Arthure</em></a>,&nbsp;</span></li>
-  <li><a href="../Morrois/ltoctavian/"><em>Octavian</em></a>,</li>
-</ul><p>and</p>
-
-<ul class="normal-text spacing"><li><em>Sir Perceval of Galles</em><em></em></li>
-</ul><p></p>
-
-</div>
-<br><br><br><br><br>
-
-
-<div id="homesidecolumn" class="animated fadeIn delay-3s column side normal-text">
-<p style="font-variant: small-caps; font-size: 33px; text-decoration: overline;">To begin</p>
-<p>
-  <ul><li>To see the full contents of the the Lincoln Thornton Manuscript, click <a href="../Morrois/lincolnthornton/">here</a>, or select The Lincoln Thornton Manuscript in the navigation bar above.</li>
-      <li>To see a growing list of manuscripts and their contents, click <a href="/collection-tree/">here</a>, or select Collection Tree in the navigation bar above.</li>
-      <li>For fuller details on how to use this site and access the data, select <a href="../Morrois/using/">Using This Site.</a></li>
-      <li>To read short essays and notes written by members of the development team on the process of data collection to date, as well as further details about our RDF migration, select <a href="https://morrois.net/essays">Essays and Notes</a>.</li>
-  </ul>
-</p>
-</div>
-</div>
-</body>
-{% endblock %}
-
-
-<footer>
-
-  <p style="margin-left: 30px;"><em>This research is supported by the Social Sciences and Humanities Research Council of Canada.</em></p>
-
-  <p style="margin-left: 20px;"><img src="https://morrois.net/files/original/bb4c7291d3e7b892ad58afa9a568001d.jpg" alt="SSHRC Logo" style="margin-right:70px;"><img src="https://morrois.net/files/original/afb832de2c9a9f3eabb9b81381c56b69.jpg" alt="MUN Logo"></p>
-
-  <div class="navbar">
-  <ul class="navigation">
-
-    <a href="../home/">Home</a>
-
-    <a href="../Morrois/lincolnthornton/">The Lincoln Thornton Manuscript</a>
-
-    <a href="../Morrois/essays/">Essays and Notes</a>
-
-    <a href="../Morrois/using/">Using This Site</a>
-
-    <a href="../Morrois/about/">About MORROIS</a>
-
-    <a href="../Morrois/news/">News</a>
-
-    <a href="../Morrois/lod/">Linked Open Data</a>
-
-  </ul>
+  
+  
+    <div class="custom-dark-font container marketing">
+      <!-- Three columns of text below the carousel -->
+      <div class="fw-light row">
+        <div class="col-lg-4">
+          <svg class="shadow bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+          
+          <h2><br>What is MORROIS?</h2>
+          <p>MORROIS is an index of line-by-line instance of place names in Middle English romances; all explicit references to any distinct place (whether noun, adjective, or other derived form) are catalogued.<br>
+           Currently, our data is offered through the <a href="https://omeka.org/" target="_blank" rel="noreferrer noopener"><em>Omeka content management system</em></a>, while a more dynamic and flexible RDF platform is under construction.&nbsp;</p> 
+          <p><a class="shadow btn custom-btn-prim" href="/Morrois/news" role="button">Learn More &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <svg class="shadow bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+  
+          <h2><br>The Manuscript</h2>
+          <p>This site features an irregularly updated concordance of all place names found in the romances of Booklets 1 and 2 of the Lincoln Thornton manuscript (Lincoln Cathedral Library, MS 91) by copyist and compiler Robert Thornton (fl. 1418 – 1456), including the unique copies of: <br>Prose <em>Life of Alexander,</em> the <a href="Morrois/ltama/"><em>Alliterative Morte Arthure</em></a>,&nbsp; 
+          <a href="Morrois/ltoctavian/"><em>Octavian</em></a>, and <em>Sir Perceval of Galles</em> </p>  
+          <p><br><a class="shadow btn custom-btn-prim" href="#" role="button">View Manuscript &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <svg class="shadow bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+  
+          <h2><br>Linked Open Data</h2>
+          <p>MORROIS datasets are available as Linked Open Data. These datasets can be queried directly using SPARQL with D3SPARQL data visualizations to gain a better understanding of the connections between multiple Place Names within the Lincoln Thornton Manuscript. MORROIS also maintains its own Ontology found <a>here</a></p><br>
+          <p><a class="shadow btn custom-btn-prim" href="/Morrois/d3sparql" role="button">Query Data  &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
   </div>
+    </div><!-- /.container -->
+ 
+  </body>
+  {% endblock %}
 
-</footer>
+  <footer class="side container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>This research is supported by the Social Sciences and Humanities Research Council of Canada &middot; <img src="https://morrois.net/files/original/bb4c7291d3e7b892ad58afa9a568001d.jpg" alt="SSHRC Logo" style="margin-right:70px;"><img src="https://morrois.net/files/original/afb832de2c9a9f3eabb9b81381c56b69.jpg" alt="MUN Logo"></p>
+  </footer>
 </html>

@@ -22,8 +22,8 @@
   function toggle() {
     d3sparql.toggle()
   }
-  </script>
-  <style>
+</script>
+<style>
       text {
         pointer-events: none;
       }
@@ -37,7 +37,7 @@
       .children:hover rect.child {
         opacity: 0.2;
       }
-      </style>
+</style>
 
 <body>
 <div id="query" style="margin: 10px">
@@ -50,31 +50,32 @@
       <button class="btn" type="button" onclick="toggle()"><i id="button" class="icon-chevron-up"></i></button>
     </div>
   </form>
-  <textarea id="sparql" class="span9" rows=15>prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
-prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix owl: <http://www.w3.org/2002/07/owl#>
-prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-prefix skos: <http://www.w3.org/2004/02/skos/core#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix morrois: <morroisVocabURI#>
-prefix foaf: <http://xmlns.com/foaf/0.1/>
+  <textarea id="sparql" class="span9" rows=15>
+    prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    prefix owl: <http://www.w3.org/2002/07/owl#>
+    prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+    prefix skos: <http://www.w3.org/2004/02/skos/core#>
+    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    prefix morrois: <morroisVocabURI#>
+    prefix foaf: <http://xmlns.com/foaf/0.1/>
 
-SELECT DISTINCT ?root_name ?parent_name ?child_name (COUNT(?item) as ?total)
-WHERE {
-  VALUES ?root { <http://localhost:3333/Europe+%28continent%29> }
-  ?root   rdf:type owl:Class ;
-          rdfs:label ?root_name .
-  ?parent rdf:type owl:Class ;
-          rdfs:label ?parent_name.
-   ?child rdf:type owl:Class ;
-          rdfs:label ?child_name;
-  		  rdfs:subClassOf ?parent.
-  ?child rdfs:subClassOf* ?root.
-  ?child rdfs:subClassOf ?parent.
+    SELECT DISTINCT ?root_name ?parent_name ?child_name (COUNT(?item) as ?total)
+    WHERE {
+      VALUES ?root { <http://localhost:3333/Europe+%28continent%29> }
+      ?root   rdf:type owl:Class ;
+              rdfs:label ?root_name .
+      ?parent rdf:type owl:Class ;
+              rdfs:label ?parent_name.
+      ?child rdf:type owl:Class ;
+              rdfs:label ?child_name;
+            rdfs:subClassOf ?parent.
+      ?child rdfs:subClassOf* ?root.
+      ?child rdfs:subClassOf ?parent.
 
-  ?item rdfs:subClassOf ?parent.
-}
-GROUP BY ?root_name ?parent_name ?child_name ORDER BY ?child_name
+      ?item rdfs:subClassOf ?parent.
+    }
+    GROUP BY ?root_name ?parent_name ?child_name ORDER BY ?child_name
 
   </textarea>
 </div>

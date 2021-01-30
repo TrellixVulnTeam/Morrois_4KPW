@@ -25,7 +25,7 @@ SECRET_KEY = '--6xbk*f#+pga6pr!nv+v@o3u@u%!m*in$5cw)&w5k^+r%+=28'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','192.168.91.16','127.0.0.1','www.morrois.net']
 
 
 # Application definition
