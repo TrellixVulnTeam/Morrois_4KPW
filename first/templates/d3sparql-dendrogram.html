@@ -1,7 +1,7 @@
-{% extends 'Morrois/home.html' %}
+ 
 {% load static %}
 
-{% block content %}
+<head>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.css">
 <script>
    function exec() {
@@ -29,7 +29,7 @@
      d3sparql.toggle()
    }
    </script>
-
+</head>
  <body>
    <div id="query" style="margin: 10px">
      <h1>Dendrogram SPARQL Query</h1>
@@ -69,4 +69,3 @@
    <div id="result"></div>
    </body>
 
-{% endblock %}
