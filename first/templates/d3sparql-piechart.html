@@ -1,7 +1,9 @@
- 
+  
 {% load static %}
 <head>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.css">
+<script src="{% static 'js/d3sparql.js'%}"></script>
+<script src="{% static 'js/d3.v3.min.js'%}"></script>
 <script>
   function exec() {
     var endpoint = d3.select("#endpoint").property("value")
