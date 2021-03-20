@@ -2,45 +2,56 @@
 
 
 {% block content %}
-
-<div class="PageDisplay">
-        <h3>About this site</h3>
-        <p>MORROIS, a digital humanities project in its nascent stages, addresses a series of critical theoretical questions surrounding the use of mapping and other data visualizations in medieval literary studies, while also providing a useful resource to researchers working in the field. 
-        <p>The ultimate goal of MORROIS is to develop a large-scale, open-ended index of place-names found in medieval romance, marking line-by-line instances where a romance explicitly employs geographical terms to describe place, person, or thing.</p>
-        <p>While these datasets are designed to be projectable across a map, the site should also be seen as both geographic index and gazetteer, allowing users to search by romance, manuscript, language, date, and/or place to find these geographic referents.</p>
-        <p>On this prototype RDF framework site, we've attempted to duplicate the functionality of the <a href="https://omeka.org/classic/" target="_blank" rel="noreferrer noopener">Omeka Classic</a> content management system. Datasets will continue to be added to both the RDF and Omeka sides over the next six months to include all place-names in both the Auchinleck Manuscript (Edinburgh, National Library of Scotland Advocates’ MS 19.2.1) and the Lincoln Thornton Manuscript (Lincoln, Lincoln Cathedral Library MS 91).</p>
+<div class="customcontainer">
+        <!-- divider design -->
+        <section class="custSect custcol-3 ss-style-invertedrounded custss-style-invertedrounded">
+                <div class="custcolumn animated fadeIn delay-0.75s"><br>
+                        <h3 class="display-2 custom-dark-font">About this site</h3>
+                        <p class="fw-light text-muted">MORROIS, a digital humanities project in its nascent stages, addresses a series of critical theoretical questions surrounding the use of mapping and other data visualizations in medieval literary studies, while also providing a useful resource to researchers working in the field. 
+                        The ultimate goal of MORROIS is to develop a large-scale, open-ended index of place-names found in medieval romance, marking line-by-line instances where a romance explicitly employs geographical terms to describe place, person, or thing. 
+                        While these datasets are designed to be projectable across a map, the site should also be seen as both geographic index and gazetteer, allowing users to search by romance, manuscript, language, date, and/or place to find these geographic referents. 
+                        <br><br>On this prototype RDF framework site, we've attempted to duplicate the functionality of the <a href="https://omeka.org/classic/" target="_blank" rel="noreferrer noopener">Omeka Classic</a> content management system. Datasets will continue to be added to both the RDF and Omeka sides over the next six months to include all place-names in both the Auchinleck Manuscript (Edinburgh, National Library of Scotland Advocates’ MS 19.2.1) and the Lincoln Thornton Manuscript (Lincoln, Lincoln Cathedral Library MS 91).
+                        
+                        <br><br>See both <a href="../about/">"About MORROIS,"</a> under <a href="../essays/">Essays and Notes</a> and "Overcoming the Perils of Mapping Medieval Spaces: GIS and Other Data Visualizations of the Literary Real and Fictive,"</a> under <a href="../essays/">Essays and Notes</a> for a fuller discussion of this process. 
+                        <br><br>See the <a href="../news/">News Page</a> for up-to-date development information.</p>
+                </div>
+        </section>
         
-        <p>See both <a href="../about/">"About MORROIS,"</a> under <a href="../essays/">Essays and Notes</a> and "Overcoming the Perils of Mapping Medieval Spaces: GIS and Other Data Visualizations of the Literary Real and Fictive,"</a> under <a href="../essays/">Essays and Notes</a> for a fuller discussion of this process.</p>
-        <p>See the <a href="../news/">News Page</a> for up-to-date development information.</p>
-        <hr>
-        <br>
-        <div>
-                <h3>Development Team</h3>
-                <h1 class="normal-text">Principal Investigator</h1>
-                <p>John A. Geck, Assistant Professor of English, Memorial University of Newfoundland</p>
-        
-                <h1 class="normal-text">Primary Collaborator</h1>
-                <p>Sean M. Winslow, Zentrum für Informationsmodellierung, Austrian Centre for Digital Humanities, Karl-Franzens-Universität Graz</p>
-        
-                <h1 class="normal-text">Technical Lead</h1>
-                <p>Shamiso Jaravaza, Computer Industry Intern (CIIO), Memorial University of Newfoundland</p>
-
-                <h1 class="normal-text">Data Collection</h1>
-                <p>Courtnee Baker, MA Student, English, Memorial University of Newfoundland</p>
-                <p>Francesca Boschetti, PhD Candidate, English, Memorial University of Newfoundland</p>
-                <p>Josh Carey, MA Student, English, Memorial Unviersity of Newfoundland</p>
-                <p>Kate Lahey, MA Student, English, Memorial University of Newfoundland</p>
-                <p>Meghan Loch, MA Student, English, Memorial University of Newfoundland</p>
-                <p>Laura Moncion, MPhil, Humanities, Memorial University of Newfoundland</p>
+        <section class="custSect custcol-2 color">
+          <h3 class="display-2 custom-light-accent">Development Team</h3><br>
+                <div class="custcolumn custtext"> 
+                        <h1 class="custom-light-accent">Principal Investigator</h1>
+                        <p class="fw-light custom-white-font">John A. Geck, Assistant Professor of English, Memorial University of Newfoundland</p>
                 
-                <h1 class="normal-text">Technical Advisory</h1>
-                <p>Marc Bolli, Manager, Information Technology, Memorial University of Newfoundland</p>
-                <p>Allan Farrell, Research Computing Specialist, Memorial University of Newfoundland</p>
-                <p>Cem Killiç, Memorial Undergraduate Career Experience Program (MUCEP) Student in Computer Science, Memorial University of Newfoundland</p>
-                <p>Craig Squires, Systems Administrator, ACENET, Memorial University of Newfoundland</p>
-                <p>Oliver Stueker, Research Consultant, ACENET, Memorial University of Newfoundland</p>
-                <p>Meheroon Nesa Tondra, Memorial Undergraduate Career Experience Program (MUCEP) Student in Computer Science, Memorial University of Newfoundland</p>
-        </div>
-</div>
+                        <h1 class="custom-light-accent">Primary Collaborator</h1>
+                        <p class="fw-light custom-white-font">Sean M. Winslow, Zentrum für Informationsmodellierung, Austrian Centre for Digital Humanities, Karl-Franzens-Universität Graz</p>
+                
+                        <h1 class="custom-light-accent">Technical Lead</h1>
+                        <p class="fw-light custom-white-font">Shamiso Jaravaza, Computer Industry Intern (CIIO), Memorial University of Newfoundland</p>
 
+                        <h1 class="custom-light-accent">Data Collection</h1>
+                        <ul>
+                                <li><p class="fw-light custom-white-font">Courtnee Baker, MA Student, English, Memorial University of Newfoundland</p></p></li>
+                                <li><p class="fw-light custom-white-font">Francesca Boschetti, PhD Candidate, English, Memorial University of Newfoundland</p></li>
+                                <li><p class="fw-light custom-white-font">Josh Carey, BA (Hons.) Student, English, Memorial Unviersity of Newfoundland</p></li>
+                                <li><p class="fw-light custom-white-font">Kate Lahey, MA Student, English, Memorial University of Newfoundland</p></li>
+                                <li><p class="fw-light custom-white-font">Meghan Loch, MA Student, English, Memorial University of Newfoundland</p></li>
+                                <li><p class="fw-light custom-white-font">Laura Moncion, MPhil, Humanities, Memorial University of Newfoundland</p></li>
+                        </ul>  
+                </div>
+                <div class="custcolumn custtext">
+                        <h1 class="custom-light-accent">Technical Advisory</h1>
+                        <ul>
+                                <li><p class="fw-light custom-white-font">Marc Bolli, Manager, Information Technology, Memorial University of Newfoundland</p></li>
+                                <li><p class="fw-light custom-white-font">Allan Farrell, Research Computing Specialist, Memorial University of Newfoundland</p></li>
+                                <li><p class="fw-light custom-white-font">Cem Killiç, Memorial Undergraduate Career Experience Program (MUCEP) Student in Computer Science, Memorial University of Newfoundland</p></li>
+                                <li><p class="fw-light custom-white-font">Craig Squires, Systems Administrator, ACENET, Memorial University of Newfoundland</p></li>
+                                <li><p class="fw-light custom-white-font">Oliver Stueker, Research Consultant, ACENET, Memorial University of Newfoundland</p></li>
+                                <li><p class="fw-light custom-white-font">Meheroon Nesa Tondra, Memorial Undergraduate Career Experience Program (MUCEP) Student in Computer Science, Memorial University of Newfoundland</p></li>
+                        </ul>  
+                </div>
+        </section>
+         
+</div>
+ 
 {% endblock %}

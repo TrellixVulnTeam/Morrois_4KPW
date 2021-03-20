@@ -31,7 +31,7 @@
       }
     </style>
     
-    <script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src = "https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
     <script src="{% static 'js/sticky.js'%}"></script>
@@ -47,19 +47,19 @@
     </script>
     
   </head>
-
+  <body class="custom-bg-light" style="padding-bottom: 0px;">
   <!-- Navigation Bar -->
   <header>
-    <nav class="shadow navbar navbar-custom navbar-expand-md navbar-dark sticky-top">
+    <nav class="navbar navbar-custom customnav navbar-expand-md navbar-dark sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="https://www.morrois.net/Morrois/">MORROIS</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <ul class="navbar-nav customnavbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link customnav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 About
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -73,10 +73,10 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://www.morrois.net/Morrois/lincolnthornton">Lincoln Thornton Manuscript</a>
+              <a class="nav-link customnav-link" href="https://www.morrois.net/Morrois/lincolnthornton">Lincoln Thornton Manuscript</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://www.morrois.net/Morrois/lod/">Linked Open Data</a>
+              <a class="nav-link customnav-link" href="https://www.morrois.net/Morrois/lod/">Linked Open Data</a>
             </li>
           </ul>
            <!--Search Bar 
@@ -88,10 +88,12 @@
       </div>
     </nav>
   </header>
+  
    
     <!--Bootstrap Carousel -->
   {% block content %}
-  <div class="custom-bg-light">
+  <br>
+  <div>
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <ol class="carousel-indicators">
         <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
@@ -177,8 +179,47 @@
   </body>
   {% endblock %}
 
+
+
+  <div class="footer-dark">
+    <footer>
+        <div class="container">
+          <p class="float-end"><a href="#">Back to top</a></p>
+            <div class="row">
+              <div class="col-md-6 item text text-muted">
+              This research is supported by the Social Sciences and Humanities Research Council of Canada &middot; <img src="https://morrois.net/files/original/bb4c7291d3e7b892ad58afa9a568001d.jpg" alt="SSHRC Logo" style="margin-right:70px;"><img src="https://morrois.net/files/original/afb832de2c9a9f3eabb9b81381c56b69.jpg" alt="MUN Logo">
+            </div>
+                <div class="col-sm-6 col-md-3 item">
+                  <h3>About</h3>
+                  <ul>
+                      <li><a href="../about">Development</a></li>
+                      <li><a href="../using">Using this Site</a></li>
+                      <li><a href="../essays">Essays and Notes</a></li>
+                      <li><a href="../news">News</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Quick Links</h3>
+                    <ul>
+                      <li><a href="../lod">Linked Open Data</a></li>
+                      <li><a href="../search">Collection</a></li> 
+                  </ul>
+                </div>
+             </div>
+            <p class="copyright">Mapping of Romance Realms and Other Imagined Spaces</p>
+        </div>
+    </footer>
+</div>
+
+
+
+
+
+
+
+  <!-- /.container  
   <footer class="side container">
     <p class="float-end"><a href="#">Back to top</a></p>
     <p>This research is supported by the Social Sciences and Humanities Research Council of Canada &middot; <img src="https://morrois.net/files/original/bb4c7291d3e7b892ad58afa9a568001d.jpg" alt="SSHRC Logo" style="margin-right:70px;"><img src="https://morrois.net/files/original/afb832de2c9a9f3eabb9b81381c56b69.jpg" alt="MUN Logo"></p>
-  </footer>
+  </footer> -->
 </html>

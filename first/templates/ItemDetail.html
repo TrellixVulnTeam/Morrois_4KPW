@@ -2,34 +2,70 @@
 
 {% block content %}
 <body>
-<div class="bg-text column middle">
-      <div class="normal-text no_dec spacing" style="float:right;">
+<div class="custom-bg-light">
+<div class="container">
+  <br>
+<!--TGN ID -->
+      <div class="lead text-muted no_dec" style="float:right;">
         <br>TGN ID<br>
-        <a href="{{instance.TGNURL}}">{{ instance.TGNID}}<a><br><br>
+        <a href="{{instance.TGNURL}}">{{ instance.TGNID|default:"No ID exists for this item"}}<a> 
       </div>
+<!--Coordinates -->
       <div>
-          <h1 class="HeaderDisplay spacing">{{ instance.Middle}} ({{instance.Modern_English}})</h1>
-          <p id="Coord"> Coordinates ( {{instance.LatTGN}}, {{instance.LongTGN}} )</p>
-          <blockquote>
-            <p class="quotation"> {{ instance.Quote}}</p>
-            <footer class="footer">{{ instance.Line_Number}}, {{ instance.Collection}}</footer>
-          </blockquote>
+          <h1 class="display-3 custom-dark-font">{{ instance.Middle}} ({{instance.Modern_English}})</h1>
+          <p class="lead display-6">Coordinates ( {{instance.LatTGN|default:"N/A"}}, {{instance.LongTGN|default:"N/A"}} )</p>
+      </div>
+<!--Quote Bubble-->  
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
+      <div class="quote-wrapper">
+        <blockquote class="text">
+          <p>{{ instance.Quote}}</p>
+          <footer>–{{ instance.Line_Number}}, {{ instance.Collection}}</footer>
+        </blockquote>
       </div>
 
-      <div class="float-start spacing normal-text no_dec">
-          <div style="float:right;">
-              MORROIS TAGS <br>
-              <p>
-              <a href="../../search/?Collection={{instance.Collection}}&Tags1={{instance.Tags1}}/">{{instance.Tags1}}</a><br>
-
-              <a href="../../search/?Collection={{instance.Collection}}&Tags2={{instance.Tags2}}/">{{instance.Tags2}}</a><br>
-
-              <a href="../../search/?Collection={{instance.Collection}}&Tags3={{instance.Tags3}}/">{{instance.Tags3}}</a><br>
-
-              <a href="../../search/?Collection={{instance.Collection}}&Tags4={{instance.Tags4}}/">{{instance.Tags4}}</a><br>
+<!--Information Tab-->  
+      <div class="container tabset">
+        <!-- Tab 1 -->
+        <input type="radio" name="tabset" id="tab1" aria-controls="TGNTags" checked>
+        <label for="tab1">TGN Tags</label>
+        <!-- Tab 2 -->
+        <input type="radio" name="tabset" id="tab2" aria-controls="MorroisTags">
+        <label for="tab2">Morrois Tags</label>
+        <!-- Tab 3 -->
+        <input type="radio" name="tabset" id="tab3" aria-controls="Notes">
+        <label for="tab3">Notes</label>
+        
+        <div class="tab-panels">
+          <section id="TGNTags" class="tab-panel">
+            <div class="animated fadeIn delay-0.75s">
+              <p>{{instance.TGNT1|default:"No TGN tags available"}}</p> 
+              <p>{{instance.TGNT2}}</p> 
+              <p>{{instance.TGNT3}}</p> 
+              <p>{{instance.TGNT4}}</p> 
+              <p>{{instance.TGNT5}}</p>
+              <p>{{instance.TGNT6}}</p>
+            </div>
+           </section>
+          <section id="MorroisTags" class="tab-panel">
+            <p class="animated fadeIn delay-0.75s">
+            <button class="btn btn-md btn-link" onclick="location.href='../../search/?Collection={{instance.Collection}}&Tags1={{instance.Tags1}}'" type="button">{{instance.Tags1}}</button><br>
+            <button class="btn btn-md btn-link" onclick="location.href='../../search/?Collection={{instance.Collection}}&Tags2={{instance.Tags2}}'" type="button">{{instance.Tags2}}</button><br>
+            <button class="btn btn-md btn-link" onclick="location.href='../../search/?Collection={{instance.Collection}}&Tags3={{instance.Tags3}}'" type="button">{{instance.Tags3}}</button><br>
+            <button class="btn btn-md btn-link" onclick="location.href='../../search/?Collection={{instance.Collection}}&Tags4={{instance.Tags4}}'" type="button">{{instance.Tags4}}</button>  
             </p>
-          </div>
-          <div style="float:left;">TGN TAGS <br><p>
+          </section>
+          <section id="Notes" class="tab-panel">
+            <p class="animated fadeIn delay-0.75s">{{instance.Notes}}</p>
+           </section>
+        </div> 
+      </div>
+      
+      
+<!--Tags  
+      <div class="container">
+            <div class="row no_dec">
+              <h3 class="">TGN TAGS</h3><p class="">
               <a href="#">{{instance.TGNT1}}</a><br>
 
               <a href="#">{{instance.TGNT2}}</a><br>
@@ -42,8 +78,22 @@
 
               <a href="#">{{instance.TGNT6}}</a><br></p> 
           </div>
+          <div class="row no_dec">
+              <h3 class="">MORROIS TAGS</h3>
+              <p>
+              <a href="../../search/?Collection={{instance.Collection}}&Tags1={{instance.Tags1}}/">{{instance.Tags1}}</a><br>
 
-  </div>
+              <a href="../../search/?Collection={{instance.Collection}}&Tags2={{instance.Tags2}}/">{{instance.Tags2}}</a><br>
+
+              <a href="../../search/?Collection={{instance.Collection}}&Tags3={{instance.Tags3}}/">{{instance.Tags3}}</a><br>
+
+              <a href="../../search/?Collection={{instance.Collection}}&Tags4={{instance.Tags4}}/">{{instance.Tags4}}</a><br>
+            </p>
+          </div>
+      </div>-->
+  </div><br>
+  <p class="text-muted lead no_dec"> <a href="../../search/?Collection={{instance.Collection}}">← Back to Collection</a></p><br><br>
+</div>
 </div>
 
 </body>

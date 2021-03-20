@@ -2,10 +2,11 @@
 
 
 {% block content %}
-<div class="custom-bg-light">
-<section class="animated fadeIn delay-0.75s py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="custom-dark-font col-lg-6 col-md-8 mx-auto">
+ 
+<div class="customcontainer">
+  <section class="custSect text-center ss-style-invertedrounded">
+    <div class="custcolumn animated fadeIn delay-0.75s  ">
+      <div class="custom-dark-font col-md-8 mx-auto">
         <h1 class ="display-1">D3SPARQL Visualizations</h1>
         <p class="lead text-muted">Below are the available data visualizations and sample SPARQL Queries. To learn more about the MORROIS Ontology, or to view a visual representation of all the ontologies used, click either of the buttons below. </p>
         <p>
@@ -14,9 +15,9 @@
         </p>
       </div>
     </div>
-  </section>
+</section>
 
-  <div class="custom-bg-dark album py-5">
+  <div class="custom-bg-brown album py-5">
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -28,7 +29,7 @@
               <p class="card-text">A Bar Chart visualization using the Frequency of a Place Name within a given range of coordinates.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                     <a class="btn btn-sm btn-outline-secondary" href="../d3sparql" role="button">View</a>  
+                     <a class="btn btn-sm custom-btn-prim" href="../d3sparql" role="button">View</a>  
                 </div>
               </div>
             </div>
@@ -42,7 +43,7 @@
               <p class="card-text">A Pie Chart visualization using the Frequency of a Place Name within a given range of Line Numbers.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a class="btn btn-sm btn-outline-secondary" href="../d3sparql" role="button">View</a>  
+                  <a class="btn btn-sm custom-btn-prim" href="../d3sparql" role="button">View</a>  
                 </div>
               </div>
             </div>
@@ -56,7 +57,7 @@
               <p class="card-text">Sankey Graph vizualization using the TGN Hierarchy of all Place Names within Asia mentioned in the text.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a class="btn btn-sm btn-outline-secondary" href="../d3sparql" role="button">View</a> 
+                  <a class="btn btn-sm custom-btn-prim" href="../d3sparql" role="button">View</a> 
                 </div>
                 <small class="text-muted">Interactive</small>
               </div>
@@ -72,7 +73,7 @@
               <p class="card-text">Round Tree Graph of the TGN Hierarchy of all Place Names within Europe mentioned in the text</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a class="btn btn-sm btn-outline-secondary" href="../d3sparql" role="button">View</a> 
+                  <a class="btn btn-sm custom-btn-prim" href="../d3sparql" role="button">View</a> 
                 </div>
               </div>
             </div>
@@ -86,7 +87,7 @@
               <p class="card-text">Tree Map of the TGN Hierarchy of all the Place Names within Europe that are mentioned in the text.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a class="btn btn-sm btn-outline-secondary" href="../d3sparql" role="button">View</a> 
+                  <a class="btn btn-sm custom-btn-prim" href="../d3sparql" role="button">View</a> 
                 </div>
               </div>
             </div>
@@ -100,7 +101,7 @@
               <p class="card-text">Tree Map Zoom of the TGN Hierarchy of the Place Names within Europe mentioned in the text.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a class="btn btn-sm btn-outline-secondary" href="../d3sparql" role="button">View</a> 
+                  <a class="btn btn-sm custom-btn-prim" href="../d3sparql" role="button">View</a> 
                 </div>
                 <small class="text-muted">Interactive</small>
               </div>
@@ -116,7 +117,7 @@
               <p class="card-text">Dendrogram Tree Map of the TGN Hierarchy of all Place Names within Africa mentioned in the text.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a class="btn btn-sm btn-outline-secondary" href="../d3sparql" role="button">View</a> 
+                  <a class="btn btn-sm custom-btn-prim" href="../d3sparql" role="button">View</a> 
                 </div>
               </div>
             </div>
@@ -130,7 +131,7 @@
               <p class="card-text">Sunburst Map of the TGN Hierarchy of all Place Names within Europe mentioned in the text</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a class="btn btn-sm btn-outline-secondary" href="../d3sparql" role="button">View</a>  
+                  <a class="btn btn-sm custom-btn-prim" href="../d3sparql" role="button">View</a>  
                 </div>
                 <small class="text-muted">Interactive</small>
               </div>
@@ -141,6 +142,7 @@
     </div>
   </div>
 </div>
+ 
 
 
   {% endblock %}
