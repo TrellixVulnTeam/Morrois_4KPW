@@ -13,7 +13,7 @@ odfpy==1.4.0
 openpyxl==2.6.2
 pyPdf==1.13
 pytz==2019.1
-PyYAML==5.1
+PyYAML==5.4
 sorter==0.5
 sqlparse==0.4.1
 tablib==3.0.0
