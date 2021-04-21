@@ -1,45 +1,52 @@
 {% extends 'home.html' %}
 
 
-{% block content %}
+{% block content %} 
+ 
 <div class="customcontainer">
-<div>
-    <section class="custSect custcol-3">
-        <div class="custcolumn animated fadeIn delay-0.75s">
-            <h3 class="display-3 custom-dark-font">Art. 8: The Alliterative Morte Arthure</h3>
-            <h4 class="lead text-muted display-5">To begin:</h4>
-        </div>
-</section>
-
-<section class="custcol-2">
-<ul class="tilesWrap">
-	<li>
-		<h2>.08</h2><br>
-		<h3>Read the TEAMS</h3>
-        <p>The Text of the Alliterative Morte Arthure (TEAMS)</a>&nbsp;is taken from 
+<div class="container py-5">
+	<h2 class="display-3 custom-dark-font">Art. 8: The Alliterative Morte Arthure</h2>
+	<div class="animated fadeIn delay-0.75s row g-5 py-5">
+	  <div class="col-md-4 d-flex align-items-start">
+		<div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+			<span data-feather="help-circle" class="icon-square"></span>
+		</div>
+		<div>
+		  <h2>Learn about the TEAMS</h2>
+		  <p>The Text of the Alliterative Morte Arthure (TEAMS)</a>&nbsp;is taken from 
             Larry Benson and Edward Foster's 1994 edition for TEAMS Middle English Text series.</p>
-		<a href="https://d.lib.rochester.edu/teams/text/benson-and-foster-king-arthurs-death-alliterative-morte-arthur-part-i" target="_blank" rel="noreferrer noopener"><button>Read Text</button></a>
-	</li>
-	<li>
-		<h2>.08</h2><br>
-		<h3>View the Index of Place Names</h3>
-		<p>See a list of all place-names that are mentioned within 
-            the <em>Alliterative Morte Arthure </em>text</p><br>
-		<a href="../search/?Collection=Alliterative+Morte+Arthur/"><button>Search Collection</button></a>
-	</li>
-	<li>
-		<h2>.08</h2><br>
-		<h3>View the Bibliography</h3>
-        <p>See the growing bibliography for the <em>Alliterative Morte Arthure</em></p><br><br>
-		<a href="../amabib/"><button>Read more</button></a>
-	</li>
-</ul>
-<p class="container"> <a class=" text-muted lead custom-light-accent" href="../lincolnthornton/">← Back to Manuscript</a></p>
-
-</section>
-
- </div>
+		  <a href="https://d.lib.rochester.edu/teams/text/benson-and-foster-king-arthurs-death-alliterative-morte-arthur-part-i" class="shadow btn custom-btn-prim my-2">
+			Read TEAMS
+		  </a>
+		</div>
+	  </div>
+	  <div class="col-md-4 d-flex align-items-start">
+		<div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+			<span data-feather="list" class="icon-square"></span>
+		</div>
+		<div>
+		  <h2>View Index of Place Names</h2>
+		  <p>See a list of all place-names that are mentioned within the <em>Alliterative Morte Arthure </em>text.</p><br><br>
+		  <a href="../search/?Collection=Alliterative+Morte+Arthur/" class="shadow btn custom-btn-prim my-2">
+			Search Collection
+		  </a>
+		</div>
+	  </div>
+	  <div class="col-md-4 d-flex align-items-start">
+		<div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+			<span data-feather="book-open" class="icon-square"></span>
+		</div>
+		<div>
+		  <h2>View the Bibliography</h2>
+		  <p>To see the Provisional Bibliography of the Alliterative Morte Arthure, click the button below</p><br><br>
+		  <a href="../amabib/" class="shadow btn custom-btn-prim my-2">
+			Read More
+		  </a>
+		</div>
+	  </div>
+	</div>
+	<p class="container"> <a class=" text-muted lead custom-light-accent" href="../lincolnthornton/">← Back to Manuscript</a></p>
+  </div>
 </div>
  
-
         {% endblock %}
