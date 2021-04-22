@@ -7,7 +7,7 @@
   <script src="{% static 'js/d3.v3.min.js'%}"></script>
   <script>
     function exec() {
-      var endpoint = "https://www.morrois.net/fuseki/test-service/sparql"
+      var endpoint = "https://www.morrois.net/fuseki/MorroisDB/sparql"
       var sparql = d3.select("#sparql").property("value")
       d3sparql.query(endpoint, sparql, render)
     }
@@ -54,7 +54,7 @@
     prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     prefix skos: <http://www.w3.org/2004/02/skos/core#>
     prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    prefix morrois: <morroisVocabURI>
+    prefix morrois: <https://www.morrois.net/Morrois/ontology#>
     prefix foaf: <http://xmlns.com/foaf/0.1/>
 
     SELECT DISTINCT ?MEWORD (COUNT(?MEWORD) as ?total)

@@ -7,7 +7,7 @@
 <script src="{% static 'js/sankey.js'%}"></script>
 <script>
   function exec() {
-    var endpoint = "https://www.morrois.net/fuseki/test-service/sparql"
+    var endpoint = "https://www.morrois.net/fuseki/MorroisDB/sparql"
     var sparql = d3.select("#sparql").property("value")
     d3sparql.query(endpoint, sparql, render)
   }
@@ -63,28 +63,28 @@
        </div>
      </form>
      <textarea id="sparql" class="span9" rows="15">
-        prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
-        prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        prefix owl: <http://www.w3.org/2002/07/owl#>
-        prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-        prefix skos: <http://www.w3.org/2004/02/skos/core#>
-        prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        prefix morrois: <morroisVocabURI#>
-        prefix foaf: <http://xmlns.com/foaf/0.1/>
-
-        SELECT DISTINCT ?parent ?parent_name ?child ?child_name
-        WHERE {
-        VALUES ?root { <http://localhost:3333/Asia+%28continent%29> }
-        ?root   rdf:type owl:Class ;
-                rdfs:label ?root_name .
-        ?parent rdf:type owl:Class ;
-                rdfs:label ?parent_name.
-          ?child rdf:type owl:Class ;
-                rdfs:label ?child_name;
-              rdfs:subClassOf ?parent.
-        ?child rdfs:subClassOf* ?root.
-        ?child rdfs:subClassOf ?parent.
-        }
+      prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+      prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      prefix owl: <http://www.w3.org/2002/07/owl#>
+      prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+      prefix skos: <http://www.w3.org/2004/02/skos/core#>
+      prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      prefix morrois: <https://www.morrois.net/Morrois/ontology#>
+      prefix foaf: <http://xmlns.com/foaf/0.1/>
+  
+       SELECT DISTINCT ?parent ?parent_name ?child ?child_name
+          WHERE {
+          VALUES ?root { <https://www.morrois.net/Morrois/ontology#/Asia%20(continent)> }
+          ?root   rdf:type owl:Class ;
+                  rdfs:label ?root_name .
+          ?parent rdf:type owl:Class ;
+                  rdfs:label ?parent_name.
+            ?child rdf:type owl:Class ;
+                  rdfs:label ?child_name;
+                rdfs:subClassOf ?parent.
+          ?child rdfs:subClassOf* ?root.
+          ?child rdfs:subClassOf ?parent.
+          }
 
      </textarea>
   </div>

@@ -6,7 +6,7 @@
     <script src="{% static 'js/d3.v3.min.js'%}"></script>
     <script>
       function exec() {
-        var endpoint = "https://www.morrois.net/fuseki/test-service/sparql"
+        var endpoint = "https://www.morrois.net/fuseki/MorroisDB/sparql"
         var sparql = d3.select("#sparql").property("value")
         d3sparql.query(endpoint, sparql, render)
       }
@@ -40,28 +40,30 @@
           <button class="btn" type="button" onclick="toggle()"><i id="button" class="icon-chevron-up"></i></button>
         </div>
       </form>
-      <textarea id="sparql" class="span9" rows="15">        prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+      <textarea id="sparql" class="span9" rows="15">        
+        prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
         prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         prefix owl: <http://www.w3.org/2002/07/owl#>
         prefix xsd: <http://www.w3.org/2001/XMLSchema#>
         prefix skos: <http://www.w3.org/2004/02/skos/core#>
         prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        prefix morrois: <morroisVocabURI#>
+        prefix morrois: <https://www.morrois.net/Morrois/ontology#>
         prefix foaf: <http://xmlns.com/foaf/0.1/>
-
+    
         SELECT DISTINCT ?root_name ?parent_name ?child_name
-        WHERE {
-          VALUES ?root { <http://localhost:3333/Europe+%28continent%29> }
-          ?root   rdf:type owl:Class ;
-                  rdfs:label ?root_name .
-          ?parent rdf:type owl:Class ;
-                  rdfs:label ?parent_name.
-            ?child rdf:type owl:Class ;
-                  rdfs:label ?child_name;
-                rdfs:subClassOf ?parent.
-          ?child rdfs:subClassOf* ?root.
-          ?child rdfs:subClassOf ?parent.
-        }
+            WHERE {
+              VALUES ?root { <https://www.morrois.net/Morrois/ontology#/Europe%20(continent)> }
+              ?root   rdf:type owl:Class ;
+                      rdfs:label ?root_name .
+              ?parent rdf:type owl:Class ;
+                      rdfs:label ?parent_name.
+                ?child rdf:type owl:Class ;
+                      rdfs:label ?child_name;
+                    rdfs:subClassOf ?parent.
+              ?child rdfs:subClassOf* ?root.
+              ?child rdfs:subClassOf ?parent.
+            }
+          
       </textarea>
     </div>
     <div id="result"></div>
