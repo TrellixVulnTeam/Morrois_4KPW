@@ -15,7 +15,7 @@ pyPdf==1.13
 pytz==2019.1
 PyYAML==5.1
 sorter==0.5
-sqlparse==0.4.1
+sqlparse==0.4.2
 tablib==3.0.0
 webstack-django-sorting==1.0.2
 xlrd==1.2.0
